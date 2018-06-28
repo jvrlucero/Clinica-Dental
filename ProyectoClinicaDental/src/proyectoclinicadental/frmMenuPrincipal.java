@@ -7,6 +7,13 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
    
     public frmMenuPrincipal() {
         initComponents();
+        btnClientesMPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnCitas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnDentistas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnFacturacion.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnSalas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnTratamientosOdon.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        
     }
 
    
@@ -28,11 +35,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         btnClientesMPrincipal.setText("CLIENTES");
         getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
 
-        btnDentistas.setText("DENTISTA");
+        btnDentistas.setText("DENTISTAS");
         getContentPane().add(btnDentistas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
         btnTratamientosOdon.setText("TRATAMIENTOS ODONTOLOGICOS");
-        getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+        getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         btnCitas.setText("CITAS");
         getContentPane().add(btnCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
