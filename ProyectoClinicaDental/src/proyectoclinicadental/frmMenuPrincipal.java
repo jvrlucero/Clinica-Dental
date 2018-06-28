@@ -7,6 +7,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
    
     public frmMenuPrincipal() {
         initComponents();
+        lblMenuPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnClientesMPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnCitas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnDentistas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
@@ -27,6 +28,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         btnCitas = new javax.swing.JButton();
         btnSalas = new javax.swing.JButton();
         btnFacturacion = new javax.swing.JButton();
+        lblMenuPrincipal = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,6 +51,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         btnFacturacion.setText("FACTURACION");
         getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+
+        lblMenuPrincipal.setForeground(java.awt.Color.red);
+        lblMenuPrincipal.setText("MENU PRINCIPAL");
+        getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 220, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 470));
@@ -99,5 +105,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnSalas;
     private javax.swing.JButton btnTratamientosOdon;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblMenuPrincipal;
     // End of variables declaration//GEN-END:variables
 }
