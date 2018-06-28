@@ -10,6 +10,8 @@ public class frmLogin extends javax.swing.JFrame {
         lblTemaLogin.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblUser.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblPassword.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        txtUser.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
     }
 
    
@@ -37,10 +39,10 @@ public class frmLogin extends javax.swing.JFrame {
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
 
         lblTemaLogin.setText("LOG IN");
-        getContentPane().add(lblTemaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 80, 30));
+        getContentPane().add(lblTemaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 80, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/dentalCare.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cortedientes.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
