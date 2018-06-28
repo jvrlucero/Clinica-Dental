@@ -33,6 +33,10 @@ public class frmClientes extends javax.swing.JFrame {
         lblTelefonoCliente = new javax.swing.JLabel();
         lblEdadCliente = new javax.swing.JLabel();
         lblDireccionCliente = new javax.swing.JLabel();
+        txtNombreCliente = new javax.swing.JTextField();
+        txtApellidoCliente = new javax.swing.JTextField();
+        txtTelefonoCliente = new javax.swing.JTextField();
+        txtEdadCliente = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,6 +58,10 @@ public class frmClientes extends javax.swing.JFrame {
 
         lblDireccionCliente.setText("Direccion");
         getContentPane().add(lblDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, -1, -1));
+        getContentPane().add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 270, 30));
+        getContentPane().add(txtApellidoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 270, -1));
+        getContentPane().add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 120, -1));
+        getContentPane().add(txtEdadCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 60, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -100,5 +108,9 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTelefonoCliente;
     private javax.swing.JLabel lblTemaClientes;
+    private javax.swing.JTextField txtApellidoCliente;
+    private javax.swing.JTextField txtEdadCliente;
+    private javax.swing.JTextField txtNombreCliente;
+    private javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
 }
