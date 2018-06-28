@@ -37,6 +37,10 @@ public class frmClientes extends javax.swing.JFrame {
         txtApellidoCliente = new javax.swing.JTextField();
         txtTelefonoCliente = new javax.swing.JTextField();
         txtEdadCliente = new javax.swing.JTextField();
+        txtDireccionCliente = new javax.swing.JTextField();
+        btnAgregarCliente = new javax.swing.JToggleButton();
+        btnLimpiarCliente = new javax.swing.JToggleButton();
+        btnRegresarCliente = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,6 +66,16 @@ public class frmClientes extends javax.swing.JFrame {
         getContentPane().add(txtApellidoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 270, -1));
         getContentPane().add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 120, -1));
         getContentPane().add(txtEdadCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 60, -1));
+        getContentPane().add(txtDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 270, -1));
+
+        btnAgregarCliente.setText("AGREGAR");
+        getContentPane().add(btnAgregarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 120, -1));
+
+        btnLimpiarCliente.setText("LIMPIAR");
+        getContentPane().add(btnLimpiarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 90, -1));
+
+        btnRegresarCliente.setText("REGRESAR");
+        getContentPane().add(btnRegresarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 120, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -102,6 +116,9 @@ public class frmClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnAgregarCliente;
+    private javax.swing.JToggleButton btnLimpiarCliente;
+    private javax.swing.JToggleButton btnRegresarCliente;
     private javax.swing.JLabel lblApellidoCliente;
     private javax.swing.JLabel lblDireccionCliente;
     private javax.swing.JLabel lblEdadCliente;
@@ -109,6 +126,7 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefonoCliente;
     private javax.swing.JLabel lblTemaClientes;
     private javax.swing.JTextField txtApellidoCliente;
+    private javax.swing.JTextField txtDireccionCliente;
     private javax.swing.JTextField txtEdadCliente;
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtTelefonoCliente;
