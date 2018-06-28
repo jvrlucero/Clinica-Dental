@@ -20,6 +20,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         btnCitas = new javax.swing.JButton();
         btnSalas = new javax.swing.JButton();
         btnFacturacion = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -41,6 +42,9 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
 
         btnFacturacion.setText("FACTURACION");
         getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,5 +91,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnFacturacion;
     private javax.swing.JButton btnSalas;
     private javax.swing.JButton btnTratamientosOdon;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
