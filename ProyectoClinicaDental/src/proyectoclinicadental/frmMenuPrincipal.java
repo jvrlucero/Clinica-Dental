@@ -14,21 +14,33 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnClientesMPrincipal = new javax.swing.JButton();
+        btnDentistas = new javax.swing.JButton();
+        btnTratamientosOdon = new javax.swing.JButton();
+        btnCitas = new javax.swing.JButton();
+        btnSalas = new javax.swing.JButton();
+        btnFacturacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        btnClientesMPrincipal.setText("CLIENTES");
+        getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
 
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
+        btnDentistas.setText("DENTISTA");
+        getContentPane().add(btnDentistas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
 
-        jButton3.setText("jButton3");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, -1, -1));
+        btnTratamientosOdon.setText("TRATAMIENTOS ODONTOLOGICOS");
+        getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, -1, -1));
+
+        btnCitas.setText("CITAS");
+        getContentPane().add(btnCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+
+        btnSalas.setText("SALAS");
+        getContentPane().add(btnSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+
+        btnFacturacion.setText("FACTURACION");
+        getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -69,8 +81,11 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCitas;
+    private javax.swing.JButton btnClientesMPrincipal;
+    private javax.swing.JButton btnDentistas;
+    private javax.swing.JButton btnFacturacion;
+    private javax.swing.JButton btnSalas;
+    private javax.swing.JButton btnTratamientosOdon;
     // End of variables declaration//GEN-END:variables
 }
