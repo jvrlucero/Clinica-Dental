@@ -22,8 +22,8 @@ public class frmLogin extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         lblTemaLogin = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -31,15 +31,15 @@ public class frmLogin extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUser.setText("User");
-        getContentPane().add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 110, 50, 20));
+        getContentPane().add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 50, 20));
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, 30));
 
         lblPassword.setText("Password");
-        getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 80, 30));
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
+        getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 80, 30));
 
         lblTemaLogin.setText("LOG IN");
         getContentPane().add(lblTemaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 80, 30));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cortedientes.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
@@ -84,10 +84,10 @@ public class frmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTemaLogin;
     private javax.swing.JLabel lblUser;
-    private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
