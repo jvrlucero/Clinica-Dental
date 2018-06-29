@@ -16,6 +16,9 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
      */
     public frmTratamientosOdontologicos() {
         initComponents();
+        txtTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        lblTemaTratamientos.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        lblTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
     }
 
     /**
@@ -27,15 +30,17 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTemaTratamientos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstTratamientos = new javax.swing.JList<>();
+        lblTratamiento = new javax.swing.JLabel();
+        txtTratamiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("TRATAMIENTOS ODONTOLOGICOS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 220, 30));
+        lblTemaTratamientos.setText("TRATAMIENTOS ODONTOLOGICOS");
+        getContentPane().add(lblTemaTratamientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 220, 30));
 
         lstTratamientos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Puentes Dentales", "Empastes", "Tratamiento Endodóntico", "Raspado y Pulido Radicular", "Ortodoncia", "Extraccion de Muelas", "Implantes Dentales", "Blanqueamiento Dental", "Carillas Dentales" };
@@ -44,7 +49,11 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstTratamientos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 190, 200));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 190, 200));
+
+        lblTratamiento.setText("Tratamiento:");
+        getContentPane().add(lblTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 80, 80, 30));
+        getContentPane().add(txtTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 230, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -85,8 +94,10 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblTemaTratamientos;
+    private javax.swing.JLabel lblTratamiento;
     private javax.swing.JList<String> lstTratamientos;
+    private javax.swing.JTextField txtTratamiento;
     // End of variables declaration//GEN-END:variables
 }
