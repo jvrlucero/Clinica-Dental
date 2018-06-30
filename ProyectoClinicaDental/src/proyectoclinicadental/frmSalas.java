@@ -35,12 +35,17 @@ public class frmSalas extends javax.swing.JFrame {
         lblSalasActuales = new javax.swing.JLabel();
         btnAgregarSalas = new javax.swing.JButton();
         btnAtrasSalas = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTemaSalas.setText("SALAS");
+        getContentPane().add(lblTemaSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 22, -1, -1));
 
         lblSalas.setText("Sala:");
+        getContentPane().add(lblSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 65, -1, -1));
+        getContentPane().add(txtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 59, 210, -1));
 
         lstSalasActuales.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -49,59 +54,19 @@ public class frmSalas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstSalasActuales);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 140, 146, -1));
+
         lblSalasActuales.setText("Salas Actuales");
+        getContentPane().add(lblSalasActuales, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 118, -1, -1));
 
         btnAgregarSalas.setText("AGREGAR");
+        getContentPane().add(btnAgregarSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
 
         btnAtrasSalas.setText("ATRAS");
+        getContentPane().add(btnAtrasSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(lblTemaSalas))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(161, 161, 161)
-                        .addComponent(lblSalasActuales))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(btnAgregarSalas)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnAtrasSalas))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblSalas)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtSala, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(87, 87, 87))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblTemaSalas)
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblSalas))
-                    .addComponent(txtSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(lblSalasActuales)
-                .addGap(6, 6, 6)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAtrasSalas)
-                    .addComponent(btnAgregarSalas)))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -145,6 +110,7 @@ public class frmSalas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarSalas;
     private javax.swing.JButton btnAtrasSalas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblSalas;
     private javax.swing.JLabel lblSalasActuales;
