@@ -35,12 +35,12 @@ public class frmFacturacion extends javax.swing.JFrame {
         cmbCitaFactura = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         cmbHistorialCFactura = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        lblCostoFactura = new javax.swing.JLabel();
+        txtCostoFactura = new javax.swing.JTextField();
+        lblDetallesFactura = new javax.swing.JLabel();
+        txtDetallesFactura = new javax.swing.JTextField();
+        btnAgregarFactura = new javax.swing.JButton();
+        btnAtrasFactura = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -68,23 +68,19 @@ public class frmFacturacion extends javax.swing.JFrame {
         cmbHistorialCFactura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbHistorialCFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 129, -1));
 
-        jLabel6.setText("jLabel6");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 235, -1, -1));
+        lblCostoFactura.setText("Costo:");
+        getContentPane().add(lblCostoFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 235, -1, -1));
+        getContentPane().add(txtCostoFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 229, 93, -1));
 
-        jTextField3.setText("jTextField3");
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 229, 93, -1));
+        lblDetallesFactura.setText("Otros Detalles:");
+        getContentPane().add(lblDetallesFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 286, -1, -1));
+        getContentPane().add(txtDetallesFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 224, -1));
 
-        jLabel7.setText("jLabel7");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 286, -1, -1));
+        btnAgregarFactura.setText("AGREGAR");
+        getContentPane().add(btnAgregarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 353, -1, -1));
 
-        jTextField4.setText("jTextField4");
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 280, 224, -1));
-
-        jButton1.setText("jButton1");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 353, -1, -1));
-
-        jButton2.setText("jButton2");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 353, -1, -1));
+        btnAtrasFactura.setText("ATRAS");
+        getContentPane().add(btnAtrasFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 353, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,19 +121,19 @@ public class frmFacturacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarFactura;
+    private javax.swing.JButton btnAtrasFactura;
     private javax.swing.JComboBox<String> cmbCitaFactura;
     private javax.swing.JComboBox<String> cmbHistorialCFactura;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblCitaFactura;
+    private javax.swing.JLabel lblCostoFactura;
+    private javax.swing.JLabel lblDetallesFactura;
     private javax.swing.JLabel lblFacturacion;
     private javax.swing.JLabel lblFechaFactura;
     private javax.swing.JLabel lblHoraFactura;
+    private javax.swing.JTextField txtCostoFactura;
+    private javax.swing.JTextField txtDetallesFactura;
     private javax.swing.JTextField txtFechaFactura;
     private javax.swing.JTextField txtHoraFactura;
     // End of variables declaration//GEN-END:variables
