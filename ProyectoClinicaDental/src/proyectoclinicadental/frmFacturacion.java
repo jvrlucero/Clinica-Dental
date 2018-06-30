@@ -31,10 +31,10 @@ public class frmFacturacion extends javax.swing.JFrame {
         txtFechaFactura = new javax.swing.JTextField();
         lblHoraFactura = new javax.swing.JLabel();
         txtHoraFactura = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lblCitaFactura = new javax.swing.JLabel();
+        cmbCitaFactura = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cmbHistorialCFactura = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -56,17 +56,17 @@ public class frmFacturacion extends javax.swing.JFrame {
         getContentPane().add(lblHoraFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 73, -1, -1));
         getContentPane().add(txtHoraFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 67, 95, -1));
 
-        jLabel4.setText("jLabel4");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 132, -1, -1));
+        lblCitaFactura.setText("Cita:");
+        getContentPane().add(lblCitaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 132, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 127, 144, -1));
+        cmbCitaFactura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbCitaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 127, 144, -1));
 
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Historial de Cliente:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 182, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 177, 129, -1));
+        cmbHistorialCFactura.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbHistorialCFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 129, -1));
 
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 235, -1, -1));
@@ -125,16 +125,16 @@ public class frmFacturacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbCitaFactura;
+    private javax.swing.JComboBox<String> cmbHistorialCFactura;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblCitaFactura;
     private javax.swing.JLabel lblFacturacion;
     private javax.swing.JLabel lblFechaFactura;
     private javax.swing.JLabel lblHoraFactura;
