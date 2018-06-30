@@ -38,6 +38,8 @@ public class frmCitas extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +60,10 @@ public class frmCitas extends javax.swing.JFrame {
         jLabel6.setText("Sala:");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButton1.setText("AGREGAR");
+
+        jButton2.setText("ATRAS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -90,7 +96,12 @@ public class frmCitas extends javax.swing.JFrame {
                                     .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 144, Short.MAX_VALUE)))))))
+                                        .addGap(0, 144, Short.MAX_VALUE))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jButton1)
+                        .addGap(85, 85, 85)
+                        .addComponent(jButton2)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,7 +127,11 @@ public class frmCitas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(81, 81, 81))
         );
 
         pack();
@@ -158,6 +173,8 @@ public class frmCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
