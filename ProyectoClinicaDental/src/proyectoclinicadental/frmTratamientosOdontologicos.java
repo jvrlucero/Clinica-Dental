@@ -36,6 +36,8 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         lstTratamientos = new javax.swing.JList<>();
         lblTratamiento = new javax.swing.JLabel();
         txtTratamiento = new javax.swing.JTextField();
+        btnAgregarTratamiento = new javax.swing.JButton();
+        btnAtrasTratamiento = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -62,6 +64,12 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 230, -1));
+
+        btnAgregarTratamiento.setText("AGREGAR");
+        getContentPane().add(btnAgregarTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
+
+        btnAtrasTratamiento.setText("ATRAS");
+        getContentPane().add(btnAtrasTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));
@@ -109,6 +117,8 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarTratamiento;
+    private javax.swing.JButton btnAtrasTratamiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTemaTratamientos;
