@@ -20,6 +20,8 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         lblTemaTratamientos.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lstTratamientos.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnAgregarTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        btnAtrasTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
     }
 
     /**
