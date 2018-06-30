@@ -27,14 +27,14 @@ public class frmCitas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        lblCitas = new javax.swing.JLabel();
+        lblFechaCita = new javax.swing.JLabel();
+        lblHoraCitas = new javax.swing.JLabel();
+        txtFechaCitas = new javax.swing.JTextField();
+        txtHoraCitas = new javax.swing.JTextField();
+        lblDentistaCitas = new javax.swing.JLabel();
+        cmbDentistaCitas = new javax.swing.JComboBox<>();
+        lblClienteCitas = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -45,25 +45,25 @@ public class frmCitas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("CITAS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, -1, -1));
+        lblCitas.setText("CITAS");
+        getContentPane().add(lblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, -1, -1));
 
-        jLabel2.setText("Fecha:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 75, -1, -1));
+        lblFechaCita.setText("Fecha:");
+        getContentPane().add(lblFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 75, -1, -1));
 
-        jLabel3.setText("Hora:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 75, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 69, 96, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 69, 88, -1));
+        lblHoraCitas.setText("Hora:");
+        getContentPane().add(lblHoraCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 75, -1, -1));
+        getContentPane().add(txtFechaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 69, 96, -1));
+        getContentPane().add(txtHoraCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 69, 88, -1));
 
-        jLabel4.setText("Elegir Dentista:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 120, -1, -1));
+        lblDentistaCitas.setText("Elegir Dentista:");
+        getContentPane().add(lblDentistaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 120, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 115, 252, -1));
+        cmbDentistaCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbDentistaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 115, 252, -1));
 
-        jLabel5.setText("Cliente:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 177, -1, -1));
+        lblClienteCitas.setText("Cliente:");
+        getContentPane().add(lblClienteCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 177, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 172, 252, -1));
@@ -122,19 +122,19 @@ public class frmCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbDentistaCitas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblCitas;
+    private javax.swing.JLabel lblClienteCitas;
+    private javax.swing.JLabel lblDentistaCitas;
+    private javax.swing.JLabel lblFechaCita;
+    private javax.swing.JLabel lblHoraCitas;
+    private javax.swing.JTextField txtFechaCitas;
+    private javax.swing.JTextField txtHoraCitas;
     // End of variables declaration//GEN-END:variables
 }
