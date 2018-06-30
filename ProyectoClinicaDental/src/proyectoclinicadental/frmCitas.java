@@ -35,11 +35,11 @@ public class frmCitas extends javax.swing.JFrame {
         lblDentistaCitas = new javax.swing.JLabel();
         cmbDentistaCitas = new javax.swing.JComboBox<>();
         lblClienteCitas = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cmbClienteCitas = new javax.swing.JComboBox<>();
+        lblSalaCitas = new javax.swing.JLabel();
+        cmbSalaCitas = new javax.swing.JComboBox<>();
+        btnAgregarCitas = new javax.swing.JButton();
+        btnAtrasCitas = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,20 +65,20 @@ public class frmCitas extends javax.swing.JFrame {
         lblClienteCitas.setText("Cliente:");
         getContentPane().add(lblClienteCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 177, -1, -1));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 172, 252, -1));
+        cmbClienteCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbClienteCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 172, 252, -1));
 
-        jLabel6.setText("Sala:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 229, -1, -1));
+        lblSalaCitas.setText("Sala:");
+        getContentPane().add(lblSalaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 229, -1, -1));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 224, 108, -1));
+        cmbSalaCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(cmbSalaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 224, 108, -1));
 
-        jButton1.setText("AGREGAR");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 337, -1, -1));
+        btnAgregarCitas.setText("AGREGAR");
+        getContentPane().add(btnAgregarCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 337, -1, -1));
 
-        jButton2.setText("ATRAS");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 337, -1, -1));
+        btnAtrasCitas.setText("ATRAS");
+        getContentPane().add(btnAtrasCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 337, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -3, 470, 450));
@@ -122,18 +122,18 @@ public class frmCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarCitas;
+    private javax.swing.JButton btnAtrasCitas;
+    private javax.swing.JComboBox<String> cmbClienteCitas;
     private javax.swing.JComboBox<String> cmbDentistaCitas;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JComboBox<String> cmbSalaCitas;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblCitas;
     private javax.swing.JLabel lblClienteCitas;
     private javax.swing.JLabel lblDentistaCitas;
     private javax.swing.JLabel lblFechaCita;
     private javax.swing.JLabel lblHoraCitas;
+    private javax.swing.JLabel lblSalaCitas;
     private javax.swing.JTextField txtFechaCitas;
     private javax.swing.JTextField txtHoraCitas;
     // End of variables declaration//GEN-END:variables
