@@ -46,7 +46,7 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTemaTratamientos.setText("TRATAMIENTOS ODONTOLOGICOS");
-        getContentPane().add(lblTemaTratamientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 280, 40));
+        getContentPane().add(lblTemaTratamientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 330, 40));
 
         lstTratamientos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Puentes Dentales", "Empastes", "Tratamiento Endodóntico", "Raspado y Pulido Radicular", "Ortodoncia", "Extraccion de Muelas", "Implantes Dentales", "Blanqueamiento Dental", "Carillas Dentales" };
