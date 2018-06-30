@@ -38,86 +38,38 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         txtFechaFin = new javax.swing.JTextField();
         btnAgregarHistorial = new javax.swing.JButton();
         btnAtrasHistorial = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTemaHistorial.setText("Historial Medico");
+        getContentPane().add(lblTemaHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 31, -1, -1));
 
         lblHistorialMedico.setText("Historial Medico:");
+        getContentPane().add(lblHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 89, -1, -1));
+        getContentPane().add(txtHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 83, 278, -1));
 
         lblTratamientoMedico.setText("Tratamiento Medico:");
+        getContentPane().add(lblTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 146, -1, -1));
+        getContentPane().add(txtTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 140, 258, -1));
 
         lblFechaInicio.setText("Fecha Inicio:");
+        getContentPane().add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 212, -1, -1));
+        getContentPane().add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 206, 112, -1));
 
         lblFechaFin.setText("Fecha Fin:");
+        getContentPane().add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 212, -1, -1));
+        getContentPane().add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 206, 117, -1));
 
         btnAgregarHistorial.setText("AGREGAR");
+        getContentPane().add(btnAgregarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 286, -1, -1));
 
         btnAtrasHistorial.setText("ATRAS");
+        getContentPane().add(btnAtrasHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 286, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(185, 185, 185)
-                        .addComponent(lblTemaHistorial))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblTratamientoMedico)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtTratamientoMedico))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblHistorialMedico)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtHistorialMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblFechaInicio)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(27, 27, 27)
-                                        .addComponent(lblFechaFin))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(52, 52, 52)
-                                        .addComponent(btnAgregarHistorial)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnAtrasHistorial)))
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblTemaHistorial)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHistorialMedico)
-                    .addComponent(txtHistorialMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTratamientoMedico)
-                    .addComponent(txtTratamientoMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFechaInicio)
-                    .addComponent(txtFechaInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblFechaFin)
-                    .addComponent(txtFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregarHistorial)
-                    .addComponent(btnAtrasHistorial))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +112,7 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarHistorial;
     private javax.swing.JButton btnAtrasHistorial;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblFechaFin;
     private javax.swing.JLabel lblFechaInicio;
     private javax.swing.JLabel lblHistorialMedico;
