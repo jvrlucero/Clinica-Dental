@@ -1,6 +1,9 @@
 
 package proyectoclinicadental;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
+
 
 public class frmLogin extends javax.swing.JFrame {
 
@@ -32,6 +35,12 @@ public class frmLogin extends javax.swing.JFrame {
 
         lblUser.setText("User");
         getContentPane().add(lblUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 50, 20));
+
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserActionPerformed(evt);
+            }
+        });
         getContentPane().add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 120, 30));
 
         lblPassword.setText("Password");
@@ -47,9 +56,41 @@ public class frmLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void txtUserKeyTyped(java.awt.event.KeyEvent evt) {                                 
+        if(evt.getKeyChar()==KeyEvent.VK_ENTER)
+        login();
+    }
+    
+    private void txtPasswordKeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(evt.getKeyChar()==KeyEvent.VK_ENTER)
+        login();
+        else
+        pass+=evt.getKeyChar();
+    } 
+    
+    String pass="";
+    private void login(){        
+        if(txtPassword.getText().equals("root")&&txtUser.getText().equals("root")){
+            frmMenuPrincipal menu=new frmMenuPrincipal();
+            this.dispose();
+            menu.setVisible(true);
+        } else if(txtUser.getText().length()!=4||(!txtUser.getText().equals("root"))){
+            JOptionPane.showMessageDialog(this, "Usuario incorrecto");
+            txtUser.setText("");
+            txtUser.requestFocus();
+        } else if(pass.length()!=4||(!pass.equals("root"))){
+            JOptionPane.showMessageDialog(this, "Contraseña incorrecta");
+            txtPassword.setText("");
+            txtPassword.requestFocus();
+            pass="";
+        }            
+    }
+    
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUserActionPerformed
+
+   
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

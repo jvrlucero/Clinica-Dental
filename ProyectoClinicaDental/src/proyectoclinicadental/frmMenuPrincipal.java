@@ -62,9 +62,42 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
+    private void btnClientesMPrincipalActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        frmClientes cli=new frmClientes();
+        this.dispose();
+        cli.setVisible(true);
+    } 
+    
+    private void btnDentistasActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        frmDentistas den=new frmDentistas();
+        this.dispose();
+        den.setVisible(true);
+    }
+    
+    private void btnTratamientosOdonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        frmTratamientosOdontologicos tra=new frmTratamientosOdontologicos();
+        this.dispose();
+        tra.setVisible(true);
+    }
+    
+    private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        frmCitas citas=new frmCitas();
+        this.dispose();
+        citas.setVisible(true);
+    }
+    
+    private void btnSalasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        frmSalas salas=new frmSalas();
+        this.dispose();
+        salas.setVisible(true);
+    }
+    
+    private void btnFacturacionActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        frmFacturacion fac=new frmFacturacion();
+        this.dispose();
+        fac.setVisible(true);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
