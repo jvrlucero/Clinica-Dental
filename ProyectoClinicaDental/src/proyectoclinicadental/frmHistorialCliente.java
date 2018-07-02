@@ -52,7 +52,6 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         btnAtrasHistorial = new javax.swing.JButton();
         lblClienteHistorialM = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,7 +86,6 @@ public class frmHistorialCliente extends javax.swing.JFrame {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 310, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,7 +204,6 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarHistorial;
     private javax.swing.JButton btnAtrasHistorial;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblClienteHistorialM;
     private javax.swing.JLabel lblFechaFin;
     private javax.swing.JLabel lblFechaInicio;

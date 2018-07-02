@@ -27,7 +27,6 @@ public class frmLogin extends javax.swing.JFrame {
         lblPassword = new javax.swing.JLabel();
         lblTemaLogin = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -49,7 +48,6 @@ public class frmLogin extends javax.swing.JFrame {
         lblTemaLogin.setText("LOG IN");
         getContentPane().add(lblTemaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 80, 30));
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,7 +120,6 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblTemaLogin;
     private javax.swing.JLabel lblUser;

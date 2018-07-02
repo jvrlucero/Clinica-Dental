@@ -38,7 +38,6 @@ public class frmCitas extends javax.swing.JFrame {
         cmbSalaCitas = new javax.swing.JComboBox<>();
         btnAgregarCitas = new javax.swing.JButton();
         btnAtrasCitas = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -77,7 +76,6 @@ public class frmCitas extends javax.swing.JFrame {
 
         btnAtrasCitas.setText("ATRAS");
         getContentPane().add(btnAtrasCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 337, -1, -1));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -3, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,7 +156,6 @@ public class frmCitas extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbClienteCitas;
     private javax.swing.JComboBox<String> cmbDentistaCitas;
     private javax.swing.JComboBox<String> cmbSalaCitas;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel lblCitas;
     private javax.swing.JLabel lblClienteCitas;
     private javax.swing.JLabel lblDentistaCitas;

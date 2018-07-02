@@ -29,7 +29,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         btnSalas = new javax.swing.JButton();
         btnFacturacion = new javax.swing.JButton();
         lblMenuPrincipal = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,7 +54,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         lblMenuPrincipal.setForeground(java.awt.Color.red);
         lblMenuPrincipal.setText("MENU PRINCIPAL");
         getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 220, 30));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -135,7 +133,6 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnFacturacion;
     private javax.swing.JButton btnSalas;
     private javax.swing.JButton btnTratamientosOdon;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblMenuPrincipal;
     // End of variables declaration//GEN-END:variables
 }

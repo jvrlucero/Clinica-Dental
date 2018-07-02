@@ -51,7 +51,6 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         txtTratamiento = new javax.swing.JTextField();
         btnAgregarTratamiento = new javax.swing.JButton();
         btnAtrasTratamiento = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -83,7 +82,6 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
 
         btnAtrasTratamiento.setText("ATRAS");
         getContentPane().add(btnAtrasTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -163,7 +161,6 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarTratamiento;
     private javax.swing.JButton btnAtrasTratamiento;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTemaTratamientos;
     private javax.swing.JLabel lblTratamiento;

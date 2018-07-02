@@ -53,7 +53,6 @@ public class frmFacturacion extends javax.swing.JFrame {
         txtDetallesFactura = new javax.swing.JTextField();
         btnAgregarFactura = new javax.swing.JButton();
         btnAtrasFactura = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -94,7 +93,6 @@ public class frmFacturacion extends javax.swing.JFrame {
 
         btnAtrasFactura.setText("ATRAS");
         getContentPane().add(btnAtrasFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 353, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,7 +229,6 @@ public class frmFacturacion extends javax.swing.JFrame {
     private javax.swing.JButton btnAtrasFactura;
     private javax.swing.JComboBox<String> cmbCitaFactura;
     private javax.swing.JComboBox<String> cmbHistorialCFactura;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblCitaFactura;
     private javax.swing.JLabel lblCostoFactura;

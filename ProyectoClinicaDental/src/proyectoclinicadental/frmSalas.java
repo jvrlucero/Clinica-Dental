@@ -45,7 +45,6 @@ public class frmSalas extends javax.swing.JFrame {
         btnAgregarSalas = new javax.swing.JButton();
         lblSalasActuales = new javax.swing.JLabel();
         btnAtrasSalas = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,7 +73,6 @@ public class frmSalas extends javax.swing.JFrame {
 
         btnAtrasSalas.setText("ATRAS");
         getContentPane().add(btnAtrasSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,7 +144,6 @@ public class frmSalas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarSalas;
     private javax.swing.JButton btnAtrasSalas;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblSalas;
     private javax.swing.JLabel lblSalasActuales;
