@@ -55,15 +55,22 @@ public class frmCitas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblCitas.setForeground(java.awt.Color.red);
         lblCitas.setText("CITAS");
         getContentPane().add(lblCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 29, -1, -1));
 
+        lblFechaCita.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblFechaCita.setForeground(java.awt.Color.orange);
         lblFechaCita.setText("Fecha:");
         getContentPane().add(lblFechaCita, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 75, -1, -1));
 
+        lblHoraCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblHoraCitas.setForeground(java.awt.Color.orange);
         lblHoraCitas.setText("Hora:");
         getContentPane().add(lblHoraCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 75, -1, -1));
 
+        txtFechaCitas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtFechaCitas.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtFechaCitasFocusGained(evt);
@@ -76,9 +83,15 @@ public class frmCitas extends javax.swing.JFrame {
         });
         getContentPane().add(txtFechaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 69, 96, -1));
 
+        txtHoraCitas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtHoraCitas.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtHoraCitasFocusGained(evt);
+            }
+        });
+        txtHoraCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtHoraCitasActionPerformed(evt);
             }
         });
         txtHoraCitas.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -88,24 +101,35 @@ public class frmCitas extends javax.swing.JFrame {
         });
         getContentPane().add(txtHoraCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 69, 88, -1));
 
+        lblDentistaCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblDentistaCitas.setForeground(java.awt.Color.orange);
         lblDentistaCitas.setText("Elegir Dentista:");
         getContentPane().add(lblDentistaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 120, -1, -1));
 
+        cmbDentistaCitas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmbDentistaCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbDentistaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 115, 252, -1));
 
+        lblClienteCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblClienteCitas.setForeground(java.awt.Color.orange);
         lblClienteCitas.setText("Cliente:");
         getContentPane().add(lblClienteCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 177, -1, -1));
 
+        cmbClienteCitas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmbClienteCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbClienteCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 172, 252, -1));
 
+        lblSalaCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblSalaCitas.setForeground(java.awt.Color.orange);
         lblSalaCitas.setText("Sala:");
         getContentPane().add(lblSalaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 229, -1, -1));
 
+        cmbSalaCitas.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         cmbSalaCitas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbSalaCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(132, 224, 108, -1));
 
+        btnAgregarCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnAgregarCitas.setForeground(java.awt.Color.green);
         btnAgregarCitas.setText("AGREGAR");
         btnAgregarCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +138,8 @@ public class frmCitas extends javax.swing.JFrame {
         });
         getContentPane().add(btnAgregarCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, -1));
 
+        btnAtrasCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnAtrasCitas.setForeground(java.awt.Color.red);
         btnAtrasCitas.setText("ATRAS");
         btnAtrasCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +191,10 @@ public class frmCitas extends javax.swing.JFrame {
         this.dispose();
         menu.setVisible(true);
     }//GEN-LAST:event_btnAtrasCitasActionPerformed
+
+    private void txtHoraCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHoraCitasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHoraCitasActionPerformed
 
     /**
      * @param args the command line arguments
