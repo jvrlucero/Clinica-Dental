@@ -44,27 +44,27 @@ public class frmClientes extends javax.swing.JFrame {
 
         lblTemaClientes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblTemaClientes.setForeground(new java.awt.Color(255, 0, 0));
-        lblTemaClientes.setText("Administracion de Clientes");
-        getContentPane().add(lblTemaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 220, 30));
+        lblTemaClientes.setText("ADMINISTRACION DE CLIENTES");
+        getContentPane().add(lblTemaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 310, 30));
 
         lblNombre.setForeground(new java.awt.Color(204, 204, 0));
-        lblNombre.setText("Nombre");
+        lblNombre.setText("NOMBRE");
         getContentPane().add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, 20));
 
         lblApellidoCliente.setForeground(new java.awt.Color(51, 255, 153));
-        lblApellidoCliente.setText("Apellido");
+        lblApellidoCliente.setText("APELLIDO");
         getContentPane().add(lblApellidoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
         lblTelefonoCliente.setForeground(new java.awt.Color(102, 255, 102));
-        lblTelefonoCliente.setText("Telefono");
+        lblTelefonoCliente.setText("TELEFONO");
         getContentPane().add(lblTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         lblEdadCliente.setForeground(new java.awt.Color(0, 255, 255));
-        lblEdadCliente.setText("Edad");
+        lblEdadCliente.setText("EDAD");
         getContentPane().add(lblEdadCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, -1));
 
         lblDireccionCliente.setForeground(new java.awt.Color(255, 0, 0));
-        lblDireccionCliente.setText("Direccion");
+        lblDireccionCliente.setText("DIRECCION");
         lblDireccionCliente.setToolTipText("");
         getContentPane().add(lblDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, 70, 30));
 
