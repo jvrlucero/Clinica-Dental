@@ -75,6 +75,7 @@ public class frmDentistas extends javax.swing.JFrame {
         jLabel4.setText("NIT:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 188, -1, 30));
 
+        jTextField1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField1KeyTyped(evt);
@@ -82,6 +83,7 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 90, 270, -1));
 
+        jTextField2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField2KeyTyped(evt);
@@ -89,6 +91,7 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 140, 270, -1));
 
+        jTextField3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField3KeyTyped(evt);
@@ -96,6 +99,7 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 193, 130, -1));
 
+        jTextField4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField4KeyTyped(evt);
@@ -108,6 +112,7 @@ public class frmDentistas extends javax.swing.JFrame {
         jLabel7.setText("DIRECCION:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 236, -1, 20));
 
+        jTextField5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField5KeyTyped(evt);
@@ -120,6 +125,7 @@ public class frmDentistas extends javax.swing.JFrame {
         jLabel8.setText("TELEFONO:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 286, 70, 20));
 
+        jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextField6KeyTyped(evt);
