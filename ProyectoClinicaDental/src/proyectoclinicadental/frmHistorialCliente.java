@@ -5,6 +5,12 @@
  */
 package proyectoclinicadental;
 
+import com.sun.glass.events.KeyEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier
@@ -14,8 +20,14 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     /**
      * Creates new form frmHistorialCliente
      */
+    
+    class_HistorialMedico HistMed=new class_HistorialMedico();
+    ResultSet rst_lista=null;    
+    DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+    
     public frmHistorialCliente() {
         initComponents();
+        llenarlista();
     }
 
     /**
@@ -38,6 +50,8 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         txtFechaFin = new javax.swing.JTextField();
         btnAgregarHistorial = new javax.swing.JButton();
         btnAtrasHistorial = new javax.swing.JButton();
+        lblClienteHistorialM = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,26 +61,32 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         getContentPane().add(lblTemaHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 31, -1, -1));
 
         lblHistorialMedico.setText("Historial Medico:");
-        getContentPane().add(lblHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 89, -1, -1));
-        getContentPane().add(txtHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 83, 278, -1));
+        getContentPane().add(lblHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        getContentPane().add(txtHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 278, -1));
 
         lblTratamientoMedico.setText("Tratamiento Medico:");
-        getContentPane().add(lblTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 146, -1, -1));
-        getContentPane().add(txtTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 140, 258, -1));
+        getContentPane().add(lblTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        getContentPane().add(txtTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 258, -1));
 
         lblFechaInicio.setText("Fecha Inicio:");
-        getContentPane().add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 212, -1, -1));
-        getContentPane().add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 206, 112, -1));
+        getContentPane().add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
+        getContentPane().add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 112, -1));
 
         lblFechaFin.setText("Fecha Fin:");
-        getContentPane().add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 212, -1, -1));
-        getContentPane().add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 206, 117, -1));
+        getContentPane().add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
+        getContentPane().add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 117, -1));
 
         btnAgregarHistorial.setText("AGREGAR");
-        getContentPane().add(btnAgregarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 286, -1, -1));
+        getContentPane().add(btnAgregarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
 
         btnAtrasHistorial.setText("ATRAS");
-        getContentPane().add(btnAtrasHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(261, 286, -1, -1));
+        getContentPane().add(btnAtrasHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+
+        lblClienteHistorialM.setText("Cliente:");
+        getContentPane().add(lblClienteHistorialM, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 310, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 380));
@@ -74,6 +94,81 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtHistorialMedicoKeyTyped(java.awt.event.KeyEvent evt) {                                            
+        if(txtHistorialMedico.getText().length()==100)
+            evt.consume();
+    }                                           
+
+    private void txtTratamientoMedicoKeyTyped(java.awt.event.KeyEvent evt) {                                              
+        if(txtTratamientoMedico.getText().length()==100)
+            evt.consume();
+    }                                             
+
+    private void txtFechaInicioKeyTyped(java.awt.event.KeyEvent evt) {                                        
+        if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaInicio.getText().length()==10))
+        evt.consume();
+        if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
+            if((txtFechaInicio.getText().length()==2)||(txtFechaInicio.getText().length()==5))
+            txtFechaInicio.setText(txtFechaInicio.getText()+"/");
+        }
+    }                                       
+
+    private void txtFechaFinKeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaFin.getText().length()==10))
+        evt.consume();
+        if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
+            if((txtFechaFin.getText().length()==2)||(txtFechaFin.getText().length()==5))
+            txtFechaFin.setText(txtFechaFin.getText()+"/");
+        }
+    }                                    
+
+    private void btnAgregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        if(txtFechaInicio.getText().equals("dd/mm/aaaa")||txtFechaInicio.getText().isEmpty())
+            JOptionPane.showMessageDialog(this, "Ingrese una fecha válida de inicio del tratamiento");
+        else if(txtFechaFin.getText().equals("dd/mm/aaaa")||txtFechaFin.getText().isEmpty())
+            JOptionPane.showMessageDialog(this, "Ingrese una fecha válida de fin del tratamiento");            
+        else if(txtHistorialMedico.getText().length()<2)
+            JOptionPane.showMessageDialog(this, "Ingrese algo representativo para el historial médico");
+        else if(txtTratamientoMedico.getText().length()<2)
+            JOptionPane.showMessageDialog(this, "Ingrese algo representativo de su tratamiento");
+        else 
+        RegistrarHistMed();
+    }                                                   
+
+    private void txtFechaInicioFocusGained(java.awt.event.FocusEvent evt) {                                           
+        if(txtFechaInicio.getText().equals("dd/mm/aaaa"))
+            txtFechaInicio.setText("");
+    }                                          
+
+    private void txtFechaFinFocusGained(java.awt.event.FocusEvent evt) {                                        
+        if(txtFechaFin.getText().equals("dd/mm/aaaa"))
+            txtFechaFin.setText("");
+    }                                       
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+        // TODO add your handling code here:
+    }                                          
+
+    private void llenarlista(){        
+        try{
+            modelo.removeAllElements();
+            rst_lista=HistMed.ListaClientes();
+            while (rst_lista.next()) 
+                modelo.addElement(rst_lista.getString(1)+" "+rst_lista.getString(2));
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+                modelo.addElement("Error");
+        }
+        jComboBox1.setModel(modelo);
+        Resetear();
+    }
+    private void Resetear(){        
+        txtFechaInicio.setText("dd/mm/aaaa");
+        txtFechaFin.setText("dd/mm/aaaa");
+        txtHistorialMedico.setText("");
+        txtTratamientoMedico.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -112,7 +207,9 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarHistorial;
     private javax.swing.JButton btnAtrasHistorial;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblClienteHistorialM;
     private javax.swing.JLabel lblFechaFin;
     private javax.swing.JLabel lblFechaInicio;
     private javax.swing.JLabel lblHistorialMedico;
@@ -123,4 +220,13 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     private javax.swing.JTextField txtHistorialMedico;
     private javax.swing.JTextField txtTratamientoMedico;
     // End of variables declaration//GEN-END:variables
+
+    private void RegistrarHistMed() { 
+        String FechaIniTrat=txtFechaInicio.getText().charAt(6)+""+txtFechaInicio.getText().charAt(7)+""+txtFechaInicio.getText().charAt(8)+""+txtFechaInicio.getText().charAt(9)+"/"+txtFechaInicio.getText().charAt(3)+""+txtFechaInicio.getText().charAt(4)+"/"+txtFechaInicio.getText().charAt(0)+""+txtFechaInicio.getText().charAt(1);
+        String FechaFinTrat=txtFechaFin.getText().charAt(6)+""+txtFechaFin.getText().charAt(7)+""+txtFechaFin.getText().charAt(8)+""+txtFechaFin.getText().charAt(9)+"/"+txtFechaFin.getText().charAt(3)+""+txtFechaFin.getText().charAt(4)+"/"+txtFechaFin.getText().charAt(0)+""+txtFechaFin.getText().charAt(1);
+        HistMed.insertar(jComboBox1.getSelectedIndex()+1, txtHistorialMedico.getText(), txtTratamientoMedico.getText(), FechaIniTrat, FechaFinTrat);
+        JOptionPane.showMessageDialog(this, "Historial médico del paciente:\n"+jComboBox1.getSelectedItem().toString()+"\n Modificado con éxito");
+        Resetear();
+    }
+
 }
