@@ -50,18 +50,28 @@ public class frmDentistas extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblDatosDentista.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblDatosDentista.setForeground(java.awt.Color.red);
         lblDatosDentista.setText("DATOS DEL DENTISTA");
         getContentPane().add(lblDatosDentista, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 16, 160, 30));
 
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.orange);
         jLabel1.setText("NOMBRES:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 66, 30));
 
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel2.setForeground(java.awt.Color.orange);
         jLabel2.setText("APELLIDOS:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 80, 30));
 
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.orange);
         jLabel3.setText("DUI:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 188, 40, 30));
 
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel4.setForeground(java.awt.Color.orange);
         jLabel4.setText("NIT:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 188, -1, 30));
 
@@ -93,6 +103,8 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(281, 193, 130, -1));
 
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel7.setForeground(java.awt.Color.orange);
         jLabel7.setText("DIRECCION:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 236, -1, 20));
 
@@ -103,6 +115,8 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 236, 291, -1));
 
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jLabel8.setForeground(java.awt.Color.orange);
         jLabel8.setText("TELEFONO:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 286, 70, 20));
 
@@ -113,6 +127,8 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 286, 150, -1));
 
+        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton1.setForeground(java.awt.Color.red);
         jButton1.setText("ATRAS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,6 +137,8 @@ public class frmDentistas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 335, -1, -1));
 
+        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jButton2.setForeground(java.awt.Color.green);
         jButton2.setText("AGREGAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
