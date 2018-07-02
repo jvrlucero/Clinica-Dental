@@ -6,15 +6,27 @@
 
 package proyectoclinicadental;
 
+import com.sun.glass.events.KeyEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier
  */
 public class frmFacturacion extends javax.swing.JFrame {
 
+    class_Factura cita=new class_Factura();
+    ResultSet rst_lista=null;    
+    DefaultComboBoxModel modelo=new DefaultComboBoxModel();
+    DefaultComboBoxModel modelo1=new DefaultComboBoxModel();
+    
     /** Creates new form frmFacturacion */
     public frmFacturacion() {
         initComponents();
+        PrepararListas();
     }
 
     /** This method is called from within the constructor to
@@ -89,6 +101,98 @@ public class frmFacturacion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAtrasFacturaActionPerformed(java.awt.event.ActionEvent evt) {                                                
+            frmMenuPrincipal menu=new frmMenuPrincipal();
+            this.dispose();
+            menu.setVisible(true);
+    }                                               
+
+    private void txtCostoFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                         
+        if (!Character.isDigit(evt.getKeyChar())) 
+            if (evt.getKeyChar()== '.'){ 
+                if (txtCostoFactura.getText().contains(".")) 
+                    evt.consume();
+                else if (txtCostoFactura.getText().isEmpty())
+                    evt.consume();                
+            }
+        if(txtCostoFactura.getText().length()==2)
+            if((txtCostoFactura.getText().charAt(0)=='0')&&(txtCostoFactura.getText().charAt(1)=='0')&&(evt.getKeyChar()=='0'))
+                evt.consume();
+        if(txtCostoFactura.getText().length()==3)
+            if((txtCostoFactura.getText().charAt(0)=='0')&&(txtCostoFactura.getText().charAt(1)=='.')&&(txtCostoFactura.getText().charAt(2)=='0')&&(evt.getKeyChar()=='0'))
+                evt.consume();        
+        if(txtCostoFactura.getText().length()==4)
+            if((txtCostoFactura.getText().charAt(0)=='0')&&(txtCostoFactura.getText().charAt(1)=='0')&&(txtCostoFactura.getText().charAt(2)=='.')&&(txtCostoFactura.getText().charAt(3)=='0')&&(evt.getKeyChar()=='0'))
+                evt.consume();
+                            
+        if (!txtCostoFactura.getText().isEmpty()){
+            if(txtCostoFactura.getText().length()==3)
+                if(Character.isDigit(txtCostoFactura.getText().charAt(0))&&Character.isDigit(txtCostoFactura.getText().charAt(1))&&Character.isDigit(txtCostoFactura.getText().charAt(2))&&(evt.getKeyChar()!='.'))
+                    evt.consume();
+            if(txtCostoFactura.getText().length()>=4){
+                if(txtCostoFactura.getText().charAt(3)=='.')
+                    if (txtCostoFactura.getText().length()== 6)
+                        evt.consume();  
+            }if(txtCostoFactura.getText().length()>=3){
+                if(txtCostoFactura.getText().charAt(2)=='.')
+                    if (txtCostoFactura.getText().length()==5)
+                        evt.consume();
+            }if(txtCostoFactura.getText().length()>=2){
+                if(txtCostoFactura.getText().charAt(1)=='.'){
+                    if (txtCostoFactura.getText().length()==4)
+                        evt.consume();
+                }
+            }
+        } 
+    }                                        
+
+    private void txtFechaFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                         
+        if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaFactura.getText().length()==10))
+        evt.consume();
+        if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
+            if((txtFechaFactura.getText().length()==2)||(txtFechaFactura.getText().length()==5))
+            txtFechaFactura.setText(txtFechaFactura.getText()+"/");
+        }
+    }                                        
+
+    private void txtFechaFacturaFocusGained(java.awt.event.FocusEvent evt) {                                            
+        if(txtFechaFactura.getText().equals("dd/mm/aaaa"))
+        txtFechaFactura.setText("");
+    }                                           
+
+    private void txtHoraFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                        
+        if ((!Character.isDigit(evt.getKeyChar()))||(txtHoraFactura.getText().length()==5))
+        evt.consume();
+        if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
+            if((txtHoraFactura.getText().length()==2))
+            txtHoraFactura.setText(txtHoraFactura.getText()+":");
+        }
+    }                                       
+
+    private void txtHoraFacturaFocusGained(java.awt.event.FocusEvent evt) {                                           
+        if(txtHoraFactura.getText().equals("HH:MM"))
+        txtHoraFactura.setText("");
+    }                                          
+
+    private void txtDetallesFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                            
+        if(txtDetallesFactura.getText().length()==100)
+            evt.consume();
+    }                                           
+
+    private void btnAgregarFacturaActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        if(txtFechaFactura.getText().equals("dd/mm/aaaa")||txtFechaFactura.getText().length()!=10)
+            JOptionPane.showMessageDialog(this, "Ingrese una fecha válida");
+        else if(txtHoraFactura.getText().equals("HH:MM")||txtHoraFactura.getText().length()==0)
+            JOptionPane.showMessageDialog(this, "Ingrese una hora válida");
+        else if(txtCostoFactura.getText().isEmpty())
+            JOptionPane.showMessageDialog(this, "Ingrese un precio");
+        else{
+        if(txtDetallesFactura.getText().isEmpty())
+            txtDetallesFactura.setText("Ninguno");
+        registrar();
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -143,4 +247,39 @@ public class frmFacturacion extends javax.swing.JFrame {
     private javax.swing.JTextField txtHoraFactura;
     // End of variables declaration//GEN-END:variables
 
+    private void PrepararListas() {
+        reset();
+        try{
+            modelo.removeAllElements();
+            modelo1.removeAllElements();
+            rst_lista=cita.ListaCitas();
+            while (rst_lista.next()) 
+                modelo.addElement(rst_lista.getString(1).toString());
+            rst_lista=cita.ListaHistClientes();
+            while (rst_lista.next()) 
+                modelo1.addElement(rst_lista.getString(1).toString());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+                modelo.addElement("Error");
+                modelo1.addElement("Error");
+        }
+        cmbCitaFactura.setModel(modelo);
+        cmbHistorialCFactura.setModel(modelo1);
+    }
+
+    private void reset() {
+        txtDetallesFactura.setText("");
+        txtCostoFactura.setText("");
+        txtFechaFactura.setText("dd/mm/aaaa");
+        txtHoraFactura.setText("HH:MM");
+        cmbCitaFactura.requestFocus();
+    }
+
+    private void registrar() {
+        String fecha=txtFechaFactura.getText().charAt(6)+""+txtFechaFactura.getText().charAt(7)+""+txtFechaFactura.getText().charAt(8)+""+txtFechaFactura.getText().charAt(9)+"/"+txtFechaFactura.getText().charAt(3)+""+txtFechaFactura.getText().charAt(4)+"/"+txtFechaFactura.getText().charAt(0)+""+txtFechaFactura.getText().charAt(1)+" "+txtHoraFactura.getText();
+        cita.insertar(cmbCitaFactura.getSelectedIndex()+1, cmbHistorialCFactura.getSelectedIndex()+1, txtDetallesFactura.getText(), txtCostoFactura.getText(), fecha);
+        JOptionPane.showMessageDialog(this, "La transacción se ha completado con éxito");        
+        reset();
+    }
+    
 }
