@@ -5,6 +5,8 @@
  */
 package proyectoclinicadental;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier
@@ -36,14 +38,10 @@ public class frmDentistas extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -66,34 +64,104 @@ public class frmDentistas extends javax.swing.JFrame {
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 50, 30));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 250, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, 250, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 130, -1));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 130, -1));
-
-        jLabel5.setText("NSS:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 176, 40, 30));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 150, -1));
-
-        jLabel6.setText("AFP:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, 30));
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 150, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 130, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 130, -1));
 
         jLabel7.setText("DIRECCION:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, 20));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 310, -1));
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 310, -1));
 
         jLabel8.setText("TELEFONO:");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 70, 20));
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 150, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 150, -1));
 
         jButton1.setText("ATRAS");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 400, -1, -1));
 
         jButton2.setText("AGREGAR");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 400, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void RegistrarCliente() {
+        class_Medicos med=new class_Medicos();
+        med.insertar(jTextField1.getText(), jTextField2.getText(),jTextField6.getText(), jTextField5.getText(), jTextField3.getText(), jTextField4.getText());
+        Mensajes("El registro del nuevo cliente se ha logrado con éxito");
+    }
+    private void Mensajes(String Men){
+        JOptionPane.showMessageDialog(this, Men);
+    }
+    private void comprobarcampos(){
+        String mens="";
+        if(jTextField1.getText().isEmpty())
+            mens=("No ha ingresado el nombre\n");
+        if(jTextField2.getText().isEmpty())
+            mens+=("No ha ingresado apellidos\n");
+        if(jTextField3.getText().isEmpty())
+            mens+=("No ha ingresado DUI\n");
+        if(jTextField4.getText().isEmpty())
+            mens+=("No ha ingresado NIT\n");
+        if(jTextField5.getText().isEmpty())
+            mens+=("No ha ingresado dirección\n");
+        if(jTextField6.getText().isEmpty())
+            mens+=("No ha ingresado teléfono\n");
+        
+        if(!mens.equals(""))
+            Mensajes(mens);
+        else 
+            RegistrarCliente();
+        mens="";
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        comprobarcampos();
+    }                                        
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField1.getText().length()==50)
+            evt.consume();
+        if(!Character.isLetter(evt.getKeyChar()))
+            evt.consume();
+    }                                    
+
+    private void jTextField2KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField2.getText().length()==50)
+            evt.consume();
+        if(!Character.isLetter(evt.getKeyChar()))
+            evt.consume();
+    }                                    
+
+    private void jTextField3KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField3.getText().length()==10)
+            evt.consume();
+        if(!Character.isDigit(evt.getKeyChar()))
+            evt.consume();
+    }                                    
+
+    private void jTextField4KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField4.getText().length()==15)
+            evt.consume();
+        if((!Character.isDigit(evt.getKeyChar()))&&(!Character.isLetter(evt.getKeyChar())))
+            evt.consume();
+    }                                    
+
+    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField5.getText().length()==100)
+            evt.consume();
+    }                                    
+
+    private void jTextField6KeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(jTextField6.getText().length()==8)
+            evt.consume();
+        if(!Character.isDigit(evt.getKeyChar()))
+            evt.consume();
+    }                                    
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        frmMenuPrincipal menu=new frmMenuPrincipal();
+        this.dispose();
+        menu.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -136,8 +204,6 @@ public class frmDentistas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
@@ -146,8 +212,6 @@ public class frmDentistas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JLabel lblDatosDentista;
     // End of variables declaration//GEN-END:variables
 }

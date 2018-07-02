@@ -83,7 +83,7 @@ public class frmClientes extends javax.swing.JFrame {
 
         btnRegresarCliente.setText("REGRESAR");
         getContentPane().add(btnRegresarCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 420, 120, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 1250, 840));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, -30, 1240, 840));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
