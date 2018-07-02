@@ -22,7 +22,6 @@ public class frmSalas extends javax.swing.JFrame {
     class_Salas salas=new class_Salas();
     ResultSet rst_lista=null;    
     DefaultListModel modelo=new DefaultListModel();
-    
     public frmSalas() {
         initComponents();
         llenarlista();
@@ -38,23 +37,19 @@ public class frmSalas extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTemaSalas = new javax.swing.JLabel();
-        txtSala = new javax.swing.JTextField();
         lblSalas = new javax.swing.JLabel();
+        txtSala = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstSalasActuales = new javax.swing.JList<>();
-        btnAgregarSalas = new javax.swing.JButton();
         lblSalasActuales = new javax.swing.JLabel();
+        btnAgregarSalas = new javax.swing.JButton();
         btnAtrasSalas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTemaSalas.setText("SALAS");
-        getContentPane().add(lblTemaSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 22, -1, -1));
-        getContentPane().add(txtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 59, 210, -1));
 
-        lblSalas.setText("Sala:");
-        getContentPane().add(lblSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 65, -1, -1));
+        lblSalas.setText("Nombre de nueva sala:");
 
         lstSalasActuales.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -63,16 +58,69 @@ public class frmSalas extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstSalasActuales);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 140, 146, -1));
+        lblSalasActuales.setText("Salas Actuales");
 
         btnAgregarSalas.setText("AGREGAR");
-        getContentPane().add(btnAgregarSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
-
-        lblSalasActuales.setText("Salas Actuales");
-        getContentPane().add(lblSalasActuales, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 118, -1, -1));
+        btnAgregarSalas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarSalasActionPerformed(evt);
+            }
+        });
 
         btnAtrasSalas.setText("ATRAS");
-        getContentPane().add(btnAtrasSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
+        btnAtrasSalas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasSalasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnAgregarSalas)
+                .addGap(59, 59, 59)
+                .addComponent(btnAtrasSalas)
+                .addGap(96, 96, 96))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(lblTemaSalas))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
+                        .addComponent(lblSalasActuales))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblSalas)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtSala, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTemaSalas)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSalas))
+                .addGap(33, 33, 33)
+                .addComponent(lblSalasActuales)
+                .addGap(8, 8, 8)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAgregarSalas)
+                    .addComponent(btnAtrasSalas))
+                .addContainerGap(30, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -89,7 +137,7 @@ public class frmSalas extends javax.swing.JFrame {
         }
         lstSalasActuales.setModel(modelo);
     }
-    private void btnAgregarSalasActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void btnAgregarSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarSalasActionPerformed
         if(txtSala.getText().length()==0)
             JOptionPane.showMessageDialog(this, "No hay ninguna referencia para \nguardar el nombre de la sala");
         else{
@@ -97,14 +145,14 @@ public class frmSalas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Registro de nueva sala exitoso");
         }
             llenarlista();
-    }                                               
+    }//GEN-LAST:event_btnAgregarSalasActionPerformed
 
-    private void btnAtrasSalasActionPerformed(java.awt.event.ActionEvent evt) {                                              
+    private void btnAtrasSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasSalasActionPerformed
         frmMenuPrincipal menu=new frmMenuPrincipal();
         this.dispose();
         menu.setVisible(true);
-    }
-    
+    }//GEN-LAST:event_btnAtrasSalasActionPerformed
+
     /**
      * @param args the command line arguments
      */

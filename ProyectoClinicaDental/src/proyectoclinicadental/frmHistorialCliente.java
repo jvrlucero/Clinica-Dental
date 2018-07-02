@@ -19,15 +19,14 @@ public class frmHistorialCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form frmHistorialCliente
-     */
-    
+     */    
     class_HistorialMedico HistMed=new class_HistorialMedico();
     ResultSet rst_lista=null;    
     DefaultComboBoxModel modelo=new DefaultComboBoxModel();
-    
     public frmHistorialCliente() {
         initComponents();
         llenarlista();
+        this.setSize(480,363);
     }
 
     /**
@@ -50,8 +49,9 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         txtFechaFin = new javax.swing.JTextField();
         btnAgregarHistorial = new javax.swing.JButton();
         btnAtrasHistorial = new javax.swing.JButton();
-        lblClienteHistorialM = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -60,65 +60,107 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         getContentPane().add(lblTemaHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 31, -1, -1));
 
         lblHistorialMedico.setText("Historial Medico:");
-        getContentPane().add(lblHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
-        getContentPane().add(txtHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 278, -1));
+        getContentPane().add(lblHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 128, -1, -1));
+
+        txtHistorialMedico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHistorialMedicoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtHistorialMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 122, 278, -1));
 
         lblTratamientoMedico.setText("Tratamiento Medico:");
-        getContentPane().add(lblTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
-        getContentPane().add(txtTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 258, -1));
+        getContentPane().add(lblTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 182, -1, -1));
+
+        txtTratamientoMedico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTratamientoMedicoKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtTratamientoMedico, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 176, 258, -1));
 
         lblFechaInicio.setText("Fecha Inicio:");
-        getContentPane().add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
-        getContentPane().add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 112, -1));
+        getContentPane().add(lblFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 243, -1, -1));
+
+        txtFechaInicio.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtFechaInicioFocusGained(evt);
+            }
+        });
+        txtFechaInicio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFechaInicioKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtFechaInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 240, 112, -1));
 
         lblFechaFin.setText("Fecha Fin:");
-        getContentPane().add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, -1));
-        getContentPane().add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 250, 117, -1));
+        getContentPane().add(lblFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 243, -1, -1));
+
+        txtFechaFin.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtFechaFinFocusGained(evt);
+            }
+        });
+        txtFechaFin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFechaFinKeyTyped(evt);
+            }
+        });
+        getContentPane().add(txtFechaFin, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 240, 117, -1));
 
         btnAgregarHistorial.setText("AGREGAR");
-        getContentPane().add(btnAgregarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, -1));
+        btnAgregarHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarHistorialActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregarHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 286, -1, -1));
 
         btnAtrasHistorial.setText("ATRAS");
-        getContentPane().add(btnAtrasHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
+        getContentPane().add(btnAtrasHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 286, -1, -1));
 
-        lblClienteHistorialM.setText("Cliente:");
-        getContentPane().add(lblClienteHistorialM, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
+        jLabel2.setText("Cliente:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 77, -1, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 310, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 74, 332, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, -40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtHistorialMedicoKeyTyped(java.awt.event.KeyEvent evt) {                                            
+    private void txtHistorialMedicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHistorialMedicoKeyTyped
         if(txtHistorialMedico.getText().length()==100)
             evt.consume();
-    }                                           
+    }//GEN-LAST:event_txtHistorialMedicoKeyTyped
 
-    private void txtTratamientoMedicoKeyTyped(java.awt.event.KeyEvent evt) {                                              
+    private void txtTratamientoMedicoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTratamientoMedicoKeyTyped
         if(txtTratamientoMedico.getText().length()==100)
             evt.consume();
-    }                                             
+    }//GEN-LAST:event_txtTratamientoMedicoKeyTyped
 
-    private void txtFechaInicioKeyTyped(java.awt.event.KeyEvent evt) {                                        
+    private void txtFechaInicioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaInicioKeyTyped
         if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaInicio.getText().length()==10))
         evt.consume();
         if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
             if((txtFechaInicio.getText().length()==2)||(txtFechaInicio.getText().length()==5))
             txtFechaInicio.setText(txtFechaInicio.getText()+"/");
         }
-    }                                       
+    }//GEN-LAST:event_txtFechaInicioKeyTyped
 
-    private void txtFechaFinKeyTyped(java.awt.event.KeyEvent evt) {                                     
+    private void txtFechaFinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaFinKeyTyped
         if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaFin.getText().length()==10))
         evt.consume();
         if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
             if((txtFechaFin.getText().length()==2)||(txtFechaFin.getText().length()==5))
             txtFechaFin.setText(txtFechaFin.getText()+"/");
         }
-    }                                    
+    }//GEN-LAST:event_txtFechaFinKeyTyped
 
-    private void btnAgregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void btnAgregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarHistorialActionPerformed
         if(txtFechaInicio.getText().equals("dd/mm/aaaa")||txtFechaInicio.getText().isEmpty())
             JOptionPane.showMessageDialog(this, "Ingrese una fecha válida de inicio del tratamiento");
         else if(txtFechaFin.getText().equals("dd/mm/aaaa")||txtFechaFin.getText().isEmpty())
@@ -129,21 +171,17 @@ public class frmHistorialCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Ingrese algo representativo de su tratamiento");
         else 
         RegistrarHistMed();
-    }                                                   
+    }//GEN-LAST:event_btnAgregarHistorialActionPerformed
 
-    private void txtFechaInicioFocusGained(java.awt.event.FocusEvent evt) {                                           
+    private void txtFechaInicioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFechaInicioFocusGained
         if(txtFechaInicio.getText().equals("dd/mm/aaaa"))
             txtFechaInicio.setText("");
-    }                                          
+    }//GEN-LAST:event_txtFechaInicioFocusGained
 
-    private void txtFechaFinFocusGained(java.awt.event.FocusEvent evt) {                                        
+    private void txtFechaFinFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFechaFinFocusGained
         if(txtFechaFin.getText().equals("dd/mm/aaaa"))
             txtFechaFin.setText("");
-    }                                       
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {                                           
-        // TODO add your handling code here:
-    }                                          
+    }//GEN-LAST:event_txtFechaFinFocusGained
 
     private void llenarlista(){        
         try{
@@ -164,7 +202,6 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         txtHistorialMedico.setText("");
         txtTratamientoMedico.setText("");
     }
-    
     /**
      * @param args the command line arguments
      */
@@ -204,7 +241,8 @@ public class frmHistorialCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnAgregarHistorial;
     private javax.swing.JButton btnAtrasHistorial;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel lblClienteHistorialM;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblFechaFin;
     private javax.swing.JLabel lblFechaInicio;
     private javax.swing.JLabel lblHistorialMedico;
@@ -223,5 +261,4 @@ public class frmHistorialCliente extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Historial médico del paciente:\n"+jComboBox1.getSelectedItem().toString()+"\n Modificado con éxito");
         Resetear();
     }
-
 }

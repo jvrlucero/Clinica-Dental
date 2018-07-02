@@ -7,6 +7,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
    
     public frmMenuPrincipal() {
         initComponents();
+        this.setSize(550,500);
         lblMenuPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnClientesMPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnCitas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
@@ -29,71 +30,108 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         btnSalas = new javax.swing.JButton();
         btnFacturacion = new javax.swing.JButton();
         lblMenuPrincipal = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnClientesMPrincipal.setText("CLIENTES");
-        getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, -1));
+        btnClientesMPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesMPrincipalActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 68, 87, -1));
 
         btnDentistas.setText("DENTISTAS");
-        getContentPane().add(btnDentistas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, -1, -1));
+        btnDentistas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDentistasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnDentistas, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 118, -1, -1));
 
         btnTratamientosOdon.setText("TRATAMIENTOS ODONTOLOGICOS");
+        btnTratamientosOdon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTratamientosOdonActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         btnCitas.setText("CITAS");
-        getContentPane().add(btnCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, -1, -1));
+        btnCitas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCitasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 219, -1, -1));
 
         btnSalas.setText("SALAS");
-        getContentPane().add(btnSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
+        btnSalas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 269, -1, -1));
 
         btnFacturacion.setText("FACTURACION");
-        getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
+        btnFacturacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturacionActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 328, -1, -1));
 
         lblMenuPrincipal.setForeground(java.awt.Color.red);
         lblMenuPrincipal.setText("MENU PRINCIPAL");
-        getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 220, 30));
+        getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 20, 193, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -170, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnClientesMPrincipalActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void btnClientesMPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesMPrincipalActionPerformed
         frmClientes cli=new frmClientes();
         this.dispose();
         cli.setVisible(true);
-    } 
-    
-    private void btnDentistasActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    }//GEN-LAST:event_btnClientesMPrincipalActionPerformed
+
+    private void btnDentistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDentistasActionPerformed
         frmDentistas den=new frmDentistas();
         this.dispose();
         den.setVisible(true);
-    }
-    
-    private void btnTratamientosOdonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    }//GEN-LAST:event_btnDentistasActionPerformed
+
+    private void btnTratamientosOdonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTratamientosOdonActionPerformed
         frmTratamientosOdontologicos tra=new frmTratamientosOdontologicos();
         this.dispose();
         tra.setVisible(true);
-    }
-    
-    private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    }//GEN-LAST:event_btnTratamientosOdonActionPerformed
+
+    private void btnCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCitasActionPerformed
         frmCitas citas=new frmCitas();
         this.dispose();
         citas.setVisible(true);
-    }
-    
-    private void btnSalasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    }//GEN-LAST:event_btnCitasActionPerformed
+
+    private void btnSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalasActionPerformed
         frmSalas salas=new frmSalas();
         this.dispose();
         salas.setVisible(true);
-    }
-    
-    private void btnFacturacionActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    }//GEN-LAST:event_btnSalasActionPerformed
+
+    private void btnFacturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturacionActionPerformed
         frmFacturacion fac=new frmFacturacion();
         this.dispose();
         fac.setVisible(true);
-    }
-    
+    }//GEN-LAST:event_btnFacturacionActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -133,6 +171,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnFacturacion;
     private javax.swing.JButton btnSalas;
     private javax.swing.JButton btnTratamientosOdon;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblMenuPrincipal;
     // End of variables declaration//GEN-END:variables
 }

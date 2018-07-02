@@ -19,14 +19,13 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     /**
      * Creates new form frmTratamientosOdontologicos
      */
-    class_TratamientosOdontologicos trat=new class_TratamientosOdontologicos();
+    
+    class_TratamientosDentDisponibles trat=new class_TratamientosDentDisponibles();
     ResultSet rst_lista=null;  
     DefaultListModel modelo=new DefaultListModel();
-    
     public frmTratamientosOdontologicos() {
         initComponents();
         llenarlista();
-        
         txtTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblTemaTratamientos.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
@@ -53,58 +52,96 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         btnAtrasTratamiento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTemaTratamientos.setText("TRATAMIENTOS ODONTOLOGICOS");
-        getContentPane().add(lblTemaTratamientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 330, 40));
 
-        lstTratamientos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Puentes Dentales", "Empastes", "Tratamiento Endodóntico", "Raspado y Pulido Radicular", "Ortodoncia", "Extraccion de Muelas", "Implantes Dentales", "Blanqueamiento Dental", "Carillas Dentales" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lstTratamientos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 270, 240));
+        lblTratamiento.setText("Añadir tratamiento:");
 
-        lblTratamiento.setText("Tratamiento:");
-        getContentPane().add(lblTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 80, 110, 30));
-
-        txtTratamiento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTratamientoActionPerformed(evt);
+        txtTratamiento.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTratamientoKeyTyped(evt);
             }
         });
-        getContentPane().add(txtTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 230, -1));
 
         btnAgregarTratamiento.setText("AGREGAR");
-        getContentPane().add(btnAgregarTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
+        btnAgregarTratamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarTratamientoActionPerformed(evt);
+            }
+        });
 
         btnAtrasTratamiento.setText("ATRAS");
-        getContentPane().add(btnAtrasTratamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
+        btnAtrasTratamiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasTratamientoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTemaTratamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(58, 58, 58)
+                            .addComponent(lblTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(90, 90, 90)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(btnAgregarTratamiento)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnAtrasTratamiento))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(58, 58, 58))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblTemaTratamientos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtrasTratamiento)
+                    .addComponent(btnAgregarTratamiento))
+                .addGap(22, 22, 22))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAgregarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+    private void btnAgregarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarTratamientoActionPerformed
         if(txtTratamiento.getText().length()>4){
             trat.insertar(txtTratamiento.getText());
             JOptionPane.showMessageDialog(this, "Nuevo tratamiento registrado con éxito");
         }else
             JOptionPane.showMessageDialog(this, "No hay un dato representativo del tratamiento");
         llenarlista();
-    }                                                     
+    }//GEN-LAST:event_btnAgregarTratamientoActionPerformed
 
-    private void btnAtrasTratamientoActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+    private void btnAtrasTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasTratamientoActionPerformed
             frmMenuPrincipal menu=new frmMenuPrincipal();
             this.dispose();
             menu.setVisible(true);
-    }                                                   
+    }//GEN-LAST:event_btnAtrasTratamientoActionPerformed
 
-    private void txtTratamientoKeyTyped(java.awt.event.KeyEvent evt) {                                        
+    private void txtTratamientoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTratamientoKeyTyped
         if(txtTratamiento.getText().length()==100)
             evt.consume();
-    }                                       
+    }//GEN-LAST:event_txtTratamientoKeyTyped
 
     private void llenarlista(){        
         try{
@@ -118,11 +155,6 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         }
         lstTratamientos.setModel(modelo);
     }
-    
-    private void txtTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTratamientoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTratamientoActionPerformed
-
     /**
      * @param args the command line arguments
      */

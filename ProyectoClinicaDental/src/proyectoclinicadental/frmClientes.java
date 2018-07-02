@@ -12,8 +12,8 @@ public class frmClientes extends javax.swing.JFrame {
     public frmClientes() {
         initComponents();
         lblTemaClientes.setForeground(Color.red);
-        
         lblTemaClientes.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        this.setSize(540, 560);
         
     }
 
@@ -22,7 +22,6 @@ public class frmClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         lblTemaClientes = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblApellidoCliente = new javax.swing.JLabel();
@@ -38,6 +37,7 @@ public class frmClientes extends javax.swing.JFrame {
         btnLimpiarCliente = new javax.swing.JToggleButton();
         btnRegresarCliente = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,6 +134,9 @@ public class frmClientes extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 370, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -162,6 +165,7 @@ public class frmClientes extends javax.swing.JFrame {
         else 
             RegistrarCliente();
         mens="";
+        limpiar();
     }
     private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarClienteActionPerformed
        comprobarcampos();
@@ -201,11 +205,7 @@ public class frmClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEdadClienteKeyTyped
 
     private void btnLimpiarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarClienteActionPerformed
-        txtNombreCliente.setText("");
-        txtApellidoCliente.setText("");
-        txtTelefonoCliente.setText("");
-        txtEdadCliente.setText("");
-        txtDireccionCliente.setText("");
+        limpiar();
     }//GEN-LAST:event_btnLimpiarClienteActionPerformed
 
     private void btnRegresarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarClienteActionPerformed
@@ -271,6 +271,14 @@ public class frmClientes extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreCliente;
     private javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
+
+    private void limpiar() {
+        txtNombreCliente.setText("");
+        txtApellidoCliente.setText("");
+        txtTelefonoCliente.setText("");
+        txtEdadCliente.setText("");
+        txtDireccionCliente.setText("");
+    }
 
     
 }

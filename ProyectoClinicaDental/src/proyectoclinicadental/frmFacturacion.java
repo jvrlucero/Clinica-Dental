@@ -18,15 +18,15 @@ import javax.swing.JOptionPane;
  */
 public class frmFacturacion extends javax.swing.JFrame {
 
+    /** Creates new form frmFacturacion */    
     class_Factura cita=new class_Factura();
     ResultSet rst_lista=null;    
     DefaultComboBoxModel modelo=new DefaultComboBoxModel();
     DefaultComboBoxModel modelo1=new DefaultComboBoxModel();
-    
-    /** Creates new form frmFacturacion */
     public frmFacturacion() {
         initComponents();
         PrepararListas();
+        this.setSize(420, 440);
     }
 
     /** This method is called from within the constructor to
@@ -53,6 +53,7 @@ public class frmFacturacion extends javax.swing.JFrame {
         txtDetallesFactura = new javax.swing.JTextField();
         btnAgregarFactura = new javax.swing.JButton();
         btnAtrasFactura = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,10 +63,32 @@ public class frmFacturacion extends javax.swing.JFrame {
 
         lblFechaFactura.setText("Fecha:");
         getContentPane().add(lblFechaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 73, -1, -1));
+
+        txtFechaFactura.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtFechaFacturaFocusGained(evt);
+            }
+        });
+        txtFechaFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFechaFacturaKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtFechaFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 67, 105, -1));
 
         lblHoraFactura.setText("Hora:");
         getContentPane().add(lblHoraFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(231, 73, -1, -1));
+
+        txtHoraFactura.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtHoraFacturaFocusGained(evt);
+            }
+        });
+        txtHoraFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHoraFacturaKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtHoraFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 67, 95, -1));
 
         lblCitaFactura.setText("Cita:");
@@ -82,28 +105,53 @@ public class frmFacturacion extends javax.swing.JFrame {
 
         lblCostoFactura.setText("Costo:");
         getContentPane().add(lblCostoFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 235, -1, -1));
+
+        txtCostoFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCostoFacturaKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtCostoFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 229, 93, -1));
 
         lblDetallesFactura.setText("Otros Detalles:");
         getContentPane().add(lblDetallesFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 286, -1, -1));
+
+        txtDetallesFactura.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDetallesFacturaKeyTyped(evt);
+            }
+        });
         getContentPane().add(txtDetallesFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 224, -1));
 
         btnAgregarFactura.setText("AGREGAR");
+        btnAgregarFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarFacturaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnAgregarFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(95, 353, -1, -1));
 
         btnAtrasFactura.setText("ATRAS");
+        btnAtrasFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasFacturaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnAtrasFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 353, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -10, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAtrasFacturaActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void btnAtrasFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasFacturaActionPerformed
             frmMenuPrincipal menu=new frmMenuPrincipal();
             this.dispose();
             menu.setVisible(true);
-    }                                               
+    }//GEN-LAST:event_btnAtrasFacturaActionPerformed
 
-    private void txtCostoFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                         
+    private void txtCostoFacturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostoFacturaKeyTyped
         if (!Character.isDigit(evt.getKeyChar())) 
             if (evt.getKeyChar()== '.'){ 
                 if (txtCostoFactura.getText().contains(".")) 
@@ -140,42 +188,42 @@ public class frmFacturacion extends javax.swing.JFrame {
                 }
             }
         } 
-    }                                        
+    }//GEN-LAST:event_txtCostoFacturaKeyTyped
 
-    private void txtFechaFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                         
+    private void txtFechaFacturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFechaFacturaKeyTyped
         if ((!Character.isDigit(evt.getKeyChar()))||(txtFechaFactura.getText().length()==10))
         evt.consume();
         if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
             if((txtFechaFactura.getText().length()==2)||(txtFechaFactura.getText().length()==5))
             txtFechaFactura.setText(txtFechaFactura.getText()+"/");
         }
-    }                                        
+    }//GEN-LAST:event_txtFechaFacturaKeyTyped
 
-    private void txtFechaFacturaFocusGained(java.awt.event.FocusEvent evt) {                                            
+    private void txtFechaFacturaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtFechaFacturaFocusGained
         if(txtFechaFactura.getText().equals("dd/mm/aaaa"))
         txtFechaFactura.setText("");
-    }                                           
+    }//GEN-LAST:event_txtFechaFacturaFocusGained
 
-    private void txtHoraFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                        
+    private void txtHoraFacturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHoraFacturaKeyTyped
         if ((!Character.isDigit(evt.getKeyChar()))||(txtHoraFactura.getText().length()==5))
         evt.consume();
         if((KeyEvent.VK_BACKSPACE!=evt.getKeyCode())&&(evt.getKeyChar()!='')){
             if((txtHoraFactura.getText().length()==2))
             txtHoraFactura.setText(txtHoraFactura.getText()+":");
         }
-    }                                       
+    }//GEN-LAST:event_txtHoraFacturaKeyTyped
 
-    private void txtHoraFacturaFocusGained(java.awt.event.FocusEvent evt) {                                           
+    private void txtHoraFacturaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHoraFacturaFocusGained
         if(txtHoraFactura.getText().equals("HH:MM"))
         txtHoraFactura.setText("");
-    }                                          
+    }//GEN-LAST:event_txtHoraFacturaFocusGained
 
-    private void txtDetallesFacturaKeyTyped(java.awt.event.KeyEvent evt) {                                            
+    private void txtDetallesFacturaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDetallesFacturaKeyTyped
         if(txtDetallesFactura.getText().length()==100)
             evt.consume();
-    }                                           
+    }//GEN-LAST:event_txtDetallesFacturaKeyTyped
 
-    private void btnAgregarFacturaActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+    private void btnAgregarFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarFacturaActionPerformed
         if(txtFechaFactura.getText().equals("dd/mm/aaaa")||txtFechaFactura.getText().length()!=10)
             JOptionPane.showMessageDialog(this, "Ingrese una fecha válida");
         else if(txtHoraFactura.getText().equals("HH:MM")||txtHoraFactura.getText().length()==0)
@@ -187,8 +235,8 @@ public class frmFacturacion extends javax.swing.JFrame {
             txtDetallesFactura.setText("Ninguno");
         registrar();
         }
-    }
-    
+    }//GEN-LAST:event_btnAgregarFacturaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +277,7 @@ public class frmFacturacion extends javax.swing.JFrame {
     private javax.swing.JButton btnAtrasFactura;
     private javax.swing.JComboBox<String> cmbCitaFactura;
     private javax.swing.JComboBox<String> cmbHistorialCFactura;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblCitaFactura;
     private javax.swing.JLabel lblCostoFactura;
@@ -276,5 +325,5 @@ public class frmFacturacion extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "La transacción se ha completado con éxito");        
         reset();
     }
-    
+
 }

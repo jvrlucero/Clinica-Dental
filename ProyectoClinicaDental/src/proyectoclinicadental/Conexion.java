@@ -1,4 +1,3 @@
-
 package proyectoclinicadental;
 
 import java.sql.Connection; //Puntero a la base de datos, proporciona el contexto para ResultSet y Statement
@@ -15,7 +14,7 @@ public class Conexion {
     private Connection cnx = null;
     private Statement sttm = null;
     private ResultSet rst = null;
-    
+
     //Método para update, insert and delete
     public void UID(String sql) {
         try {
@@ -28,7 +27,7 @@ public class Conexion {
             System.exit(1); //salir de aplicación
         }
     }
-    
+
     //Método para Consultar
     public ResultSet getValores(String sql) {
         try {
@@ -43,7 +42,5 @@ public class Conexion {
             return rst;
         }
     }
-      
-    
-
+        
 }
