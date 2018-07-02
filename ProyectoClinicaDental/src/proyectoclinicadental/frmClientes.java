@@ -2,7 +2,7 @@
 package proyectoclinicadental;
 
 import java.awt.Color;
-
+import javax.swing.JOptionPane;
 
 public class frmClientes extends javax.swing.JFrame {
 
@@ -88,6 +88,87 @@ public class frmClientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void RegistrarCliente() {
+       class_Clientes cli=new class_Clientes();
+       cli.insertar(txtNombreCliente.getText(), txtApellidoCliente.getText(), txtTelefonoCliente.getText(), txtDireccionCliente.getText(), txtEdadCliente.getText());
+       Mensajes("El registro del nuevo cliente se ha logrado con éxito");
+    }
+    private void Mensajes(String Men){
+        JOptionPane.showMessageDialog(this, Men);
+    }
+    private void comprobarcampos(){
+        String mens="";
+        if(txtNombreCliente.getText().isEmpty())
+            mens=("No ha ingresado el nombre\n");
+        if(txtApellidoCliente.getText().isEmpty())
+            mens+=("No ha ingresado apellidos\n");
+        if(txtTelefonoCliente.getText().isEmpty())
+            mens+=("No ha ingresado el nombre\n");
+        if(txtDireccionCliente.getText().isEmpty())
+            mens+=("No ha ingresado apellidos\n");
+        if(txtEdadCliente.getText().isEmpty())
+            mens+=("No ha ingresado el nombre\n");
+        if(!mens.equals(""))
+            Mensajes(mens);
+        else 
+            RegistrarCliente();
+        mens="";
+    }
+    private void btnAgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+       comprobarcampos();
+    }                                                 
+
+    private void txtNombreClienteKeyTyped(java.awt.event.KeyEvent evt) {                                          
+        if(txtNombreCliente.getText().length()==50)
+            evt.consume();
+        if(!Character.isLetter(evt.getKeyChar()))
+            evt.consume();
+    }                                         
+
+    private void txtApellidoClienteKeyTyped(java.awt.event.KeyEvent evt) {                                            
+        if(txtApellidoCliente.getText().length()==50)
+            evt.consume();
+        if(!Character.isLetter(evt.getKeyChar()))
+            evt.consume();
+    }                                           
+
+    private void txtTelefonoClienteKeyTyped(java.awt.event.KeyEvent evt) {                                            
+        if(txtTelefonoCliente.getText().length()==8)
+            evt.consume();
+        if(!Character.isDigit(evt.getKeyChar()))
+            evt.consume();
+    }                                           
+
+    private void txtDireccionClienteKeyTyped(java.awt.event.KeyEvent evt) {                                             
+        if(txtDireccionCliente.getText().length()==100)
+            evt.consume();
+    }                                            
+
+    private void txtEdadClienteKeyTyped(java.awt.event.KeyEvent evt) {                                        
+        if(txtEdadCliente.getText().length()==2)
+            evt.consume();
+    }                                       
+
+    private void btnLimpiarClienteActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        txtNombreCliente.setText("");
+        txtApellidoCliente.setText("");
+        txtTelefonoCliente.setText("");
+        txtEdadCliente.setText("");
+        txtDireccionCliente.setText("");
+    }                                                 
+
+    private void btnRegresarClienteActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        frmMenuPrincipal menu=new frmMenuPrincipal();
+        this.dispose();
+        menu.setVisible(true);
+    }                                                  
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        frmHistorialCliente HC=new frmHistorialCliente();
+        this.dispose();
+        HC.setVisible(true);
+    }
+    
     private void txtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteActionPerformed
         // TODO add your handling code here:
         
