@@ -5,6 +5,11 @@
  */
 package proyectoclinicadental;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier
@@ -14,8 +19,13 @@ public class frmSalas extends javax.swing.JFrame {
     /**
      * Creates new form frmSalas
      */
+    class_Salas salas=new class_Salas();
+    ResultSet rst_lista=null;    
+    DefaultListModel modelo=new DefaultListModel();
+    
     public frmSalas() {
         initComponents();
+        llenarlista();
     }
 
     /**
@@ -28,12 +38,12 @@ public class frmSalas extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTemaSalas = new javax.swing.JLabel();
-        lblSalas = new javax.swing.JLabel();
         txtSala = new javax.swing.JTextField();
+        lblSalas = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstSalasActuales = new javax.swing.JList<>();
-        lblSalasActuales = new javax.swing.JLabel();
         btnAgregarSalas = new javax.swing.JButton();
+        lblSalasActuales = new javax.swing.JLabel();
         btnAtrasSalas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -42,10 +52,10 @@ public class frmSalas extends javax.swing.JFrame {
 
         lblTemaSalas.setText("SALAS");
         getContentPane().add(lblTemaSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 22, -1, -1));
+        getContentPane().add(txtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 59, 210, -1));
 
         lblSalas.setText("Sala:");
         getContentPane().add(lblSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 65, -1, -1));
-        getContentPane().add(txtSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(79, 59, 210, -1));
 
         lstSalasActuales.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -56,11 +66,11 @@ public class frmSalas extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 140, 146, -1));
 
-        lblSalasActuales.setText("Salas Actuales");
-        getContentPane().add(lblSalasActuales, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 118, -1, -1));
-
         btnAgregarSalas.setText("AGREGAR");
         getContentPane().add(btnAgregarSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+
+        lblSalasActuales.setText("Salas Actuales");
+        getContentPane().add(lblSalasActuales, new org.netbeans.lib.awtextra.AbsoluteConstraints(161, 118, -1, -1));
 
         btnAtrasSalas.setText("ATRAS");
         getContentPane().add(btnAtrasSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
@@ -71,6 +81,34 @@ public class frmSalas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void llenarlista(){        
+        try{
+            modelo.removeAllElements();
+            rst_lista=salas.LlenarListadeSalas();
+            while (rst_lista.next()) 
+                modelo.addElement(rst_lista.getString("Nombre_Sala").toString());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+                modelo.addElement("Error");
+        }
+        lstSalasActuales.setModel(modelo);
+    }
+    private void btnAgregarSalasActionPerformed(java.awt.event.ActionEvent evt) {                                                
+        if(txtSala.getText().length()==0)
+            JOptionPane.showMessageDialog(this, "No hay ninguna referencia para \nguardar el nombre de la sala");
+        else{
+            salas.insertar(txtSala.getText());
+            JOptionPane.showMessageDialog(this, "Registro de nueva sala exitoso");
+        }
+            llenarlista();
+    }                                               
+
+    private void btnAtrasSalasActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        frmMenuPrincipal menu=new frmMenuPrincipal();
+        this.dispose();
+        menu.setVisible(true);
+    }
+    
     /**
      * @param args the command line arguments
      */
