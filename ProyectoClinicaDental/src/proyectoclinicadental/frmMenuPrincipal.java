@@ -8,14 +8,14 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
     public frmMenuPrincipal() {
         initComponents();
         this.setSize(550,500);
-        lblMenuPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
+        /*lblMenuPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnClientesMPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnCitas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnDentistas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnFacturacion.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnSalas.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         btnTratamientosOdon.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
-        
+        */
     }
 
    
@@ -35,14 +35,16 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnClientesMPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnClientesMPrincipal.setText("CLIENTES");
         btnClientesMPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClientesMPrincipalActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 68, 87, -1));
+        getContentPane().add(btnClientesMPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 68, 110, -1));
 
+        btnDentistas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnDentistas.setText("DENTISTAS");
         btnDentistas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,14 +53,16 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnDentistas, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 118, -1, -1));
 
+        btnTratamientosOdon.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnTratamientosOdon.setText("TRATAMIENTOS ODONTOLOGICOS");
         btnTratamientosOdon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTratamientosOdonActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
+        getContentPane().add(btnTratamientosOdon, new org.netbeans.lib.awtextra.AbsoluteConstraints(87, 170, 260, -1));
 
+        btnCitas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnCitas.setText("CITAS");
         btnCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,6 +71,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 219, -1, -1));
 
+        btnSalas.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnSalas.setText("SALAS");
         btnSalas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +80,7 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 269, -1, -1));
 
+        btnFacturacion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnFacturacion.setText("FACTURACION");
         btnFacturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,9 +89,10 @@ public class frmMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(btnFacturacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 328, -1, -1));
 
+        lblMenuPrincipal.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblMenuPrincipal.setForeground(java.awt.Color.red);
         lblMenuPrincipal.setText("MENU PRINCIPAL");
-        getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 20, 193, 30));
+        getContentPane().add(lblMenuPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, 193, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -170, -1, -1));

@@ -42,6 +42,7 @@ public class frmClientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTemaClientes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblTemaClientes.setForeground(new java.awt.Color(255, 0, 0));
         lblTemaClientes.setText("Administracion de Clientes");
         getContentPane().add(lblTemaClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 220, 30));
