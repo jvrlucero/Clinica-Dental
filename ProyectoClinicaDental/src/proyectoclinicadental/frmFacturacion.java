@@ -94,8 +94,6 @@ public class frmFacturacion extends javax.swing.JFrame {
 
         btnAtrasFactura.setText("ATRAS");
         getContentPane().add(btnAtrasFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 353, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 430));
 
         pack();

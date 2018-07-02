@@ -77,8 +77,6 @@ public class frmCitas extends javax.swing.JFrame {
 
         btnAtrasCitas.setText("ATRAS");
         getContentPane().add(btnAtrasCitas, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 337, -1, -1));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fundo-azul-da-tecnologia-com-linhas_23-2147611285.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, -3, 400, 300));
 
         pack();

@@ -49,8 +49,6 @@ public class frmLogin extends javax.swing.JFrame {
         lblTemaLogin.setText("LOG IN");
         getContentPane().add(lblTemaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 80, 30));
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 120, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cortedientes.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
 
         pack();
