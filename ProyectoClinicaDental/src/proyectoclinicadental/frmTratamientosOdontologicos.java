@@ -5,6 +5,11 @@
  */
 package proyectoclinicadental;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Javier
@@ -14,8 +19,14 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
     /**
      * Creates new form frmTratamientosOdontologicos
      */
+    class_TratamientosOdontologicos trat=new class_TratamientosOdontologicos();
+    ResultSet rst_lista=null;  
+    DefaultListModel modelo=new DefaultListModel();
+    
     public frmTratamientosOdontologicos() {
         initComponents();
+        llenarlista();
+        
         txtTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblTemaTratamientos.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
         lblTratamiento.setFont(new java.awt.Font("Times New Roman", 0, 20)); 
@@ -79,6 +90,39 @@ public class frmTratamientosOdontologicos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarTratamientoActionPerformed(java.awt.event.ActionEvent evt) {                                                      
+        if(txtTratamiento.getText().length()>4){
+            trat.insertar(txtTratamiento.getText());
+            JOptionPane.showMessageDialog(this, "Nuevo tratamiento registrado con éxito");
+        }else
+            JOptionPane.showMessageDialog(this, "No hay un dato representativo del tratamiento");
+        llenarlista();
+    }                                                     
+
+    private void btnAtrasTratamientoActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+            frmMenuPrincipal menu=new frmMenuPrincipal();
+            this.dispose();
+            menu.setVisible(true);
+    }                                                   
+
+    private void txtTratamientoKeyTyped(java.awt.event.KeyEvent evt) {                                        
+        if(txtTratamiento.getText().length()==100)
+            evt.consume();
+    }                                       
+
+    private void llenarlista(){        
+        try{
+            modelo.removeAllElements();
+            rst_lista=trat.ListaTratamientos();
+            while (rst_lista.next()) 
+                modelo.addElement(rst_lista.getString(1).toString());
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage(), "Error", 0);
+                modelo.addElement("Error");
+        }
+        lstTratamientos.setModel(modelo);
+    }
+    
     private void txtTratamientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTratamientoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTratamientoActionPerformed
